@@ -1,0 +1,4 @@
+cbuild-set:
+  generated-by: csolution version 2.4.0
+  contexts:
+    - context: STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink

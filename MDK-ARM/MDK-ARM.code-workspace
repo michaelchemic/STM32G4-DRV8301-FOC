@@ -1,0 +1,15 @@
+{
+    "folders": [],
+    "settings": {
+        "cmsis-csolution.actions": [
+            {
+                "path": "STM32G474RETx_Demo_Blink.csolution.yml",
+                "target": "STM32G474RETxDemoBlink",
+                "config": {
+                    "run": "Flash Device"
+                }
+            }
+        ]
+    },
+    "extensions": {}
+}

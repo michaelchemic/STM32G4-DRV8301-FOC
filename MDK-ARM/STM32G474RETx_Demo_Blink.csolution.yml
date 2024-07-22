@@ -1,0 +1,10 @@
+solution:
+  created-by: uv2csolution@1.4.0
+  created-for: CMSIS-Toolbox@2.3.0
+  compiler: AC6
+  target-types:
+    - type: STM32G474RETxDemoBlink
+      device: STM32G474RETx
+      optimize: debug
+  projects:
+    - project: STM32G474RETx_Demo_Blink.cproject.yml

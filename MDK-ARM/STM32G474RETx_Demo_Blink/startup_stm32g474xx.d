@@ -1,0 +1,1 @@
+stm32g474retx_demo_blink\startup_stm32g474xx.o: startup_stm32g474xx.s

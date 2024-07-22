@@ -1,0 +1,23 @@
+{
+    "cmsis-csolution.actions": [
+        {
+            "path": "STM32G474RETx_Demo_Blink.csolution.yml",
+            "target": "STM32G474RETxDemoBlink",
+            "config": {
+                "run": "Flash Device",
+                "debug": "Arm Debugger"
+            }
+        }
+    ],
+    "files.associations": {
+        "main.h": "c",
+        "fdcan.h": "c",
+        "i2c.h": "c",
+        "tim.h": "c",
+        "usart.h": "c",
+        "gpio.h": "c",
+        "abz.h": "c",
+        "foc.h": "c"
+    },
+    "todo-tree.tree.showBadges": true
+}

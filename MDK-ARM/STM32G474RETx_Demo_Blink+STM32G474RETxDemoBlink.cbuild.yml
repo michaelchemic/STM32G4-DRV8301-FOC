@@ -1,0 +1,280 @@
+build:
+  generated-by: csolution version 2.4.0
+  solution: STM32G474RETx_Demo_Blink.csolution.yml
+  project: STM32G474RETx_Demo_Blink.cproject.yml
+  context: STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink
+  compiler: AC6
+  device: STM32G474RETx
+  device-pack: Keil::STM32G4xx_DFP@1.6.0
+  processor:
+    endian: little
+    fpu: sp
+    core: Cortex-M4
+  packs:
+    - pack: ARM::CMSIS@5.9.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0
+    - pack: Keil::STM32G4xx_DFP@1.6.0
+      path: ${CMSIS_PACK_ROOT}/Keil/STM32G4xx_DFP/1.6.0
+  optimize: debug
+  debug: on
+  misc:
+    C:
+      - -std=c99
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Wno-packed
+      - -Wno-missing-variable-declarations
+      - -Wno-missing-prototypes
+      - -Wno-missing-noreturn
+      - -Wno-sign-conversion
+      - -Wno-nonportable-include-path
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+      - -Wno-license-management
+      - -Wno-parentheses-equality
+    CPP:
+      - -xc++
+      - -std=c++03
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Wno-packed
+      - -Wno-missing-variable-declarations
+      - -Wno-missing-prototypes
+      - -Wno-missing-noreturn
+      - -Wno-sign-conversion
+      - -Wno-nonportable-include-path
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+      - -Wno-license-management
+      - -Wno-parentheses-equality
+    Link:
+      - --library_type=microlib
+      - --map
+      - --load_addr_map_info
+      - --xref
+      - --callgraph
+      - --symbols
+      - --info sizes
+      - --info totals
+      - --info unused
+      - --info veneers
+      - --strict
+      - --summary_stderr
+      - --info summarysizes
+  define:
+    - USE_HAL_DRIVER
+    - STM32G474xx
+    - __MICROLIB
+    - STM32G474xx
+    - _RTE_
+  define-asm:
+    - STM32G474xx
+    - _RTE_
+  add-path:
+    - ../Core/Inc
+    - ../Drivers/STM32G4xx_HAL_Driver/Inc
+    - ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy
+    - ../Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    - ../Drivers/CMSIS/Include
+    - ../FOC_Related/CONTROL
+    - ../FOC_Related/AS5600
+    - ../FOC_Related/FOC
+    - ../FOC_Related/LOWPASS_FILTER
+    - ../FOC_Related/PID
+    - ../FOC_Related/ABZ
+    - ../FOC_Related/HALL
+    - RTE/_STM32G474RETxDemoBlink
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include
+  output-dirs:
+    intdir: tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink
+    outdir: out/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink
+    rtedir: RTE
+  output:
+    - type: elf
+      file: STM32G474RETx_Demo_Blink.axf
+  components:
+    - component: ARM::CMSIS:CORE@5.6.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@5.9.0
+      selected-by: ARM::CMSIS:CORE
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+          category: include
+          version: 5.6.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Include/tz_context.h
+          category: header
+          version: 5.6.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Template/ARMv8-M/main_s.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: Secure mode 'main' module for ARMv8-M
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Template/ARMv8-M/tz_context.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: RTOS Context Management (TrustZone for ARMv8-M)
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Documentation/Core/html/index.html
+          category: doc
+          version: 5.6.0
+  linker:
+    script: STM32G474RETx_Demo_Blink_STM32G474RETxDemoBlink.sct
+  groups:
+    - group: Application/MDK-ARM
+      files:
+        - file: startup_stm32g474xx.s
+          category: sourceAsm
+          misc:
+            ASM:
+              - -masm=auto
+    - group: Application/User/Core
+      files:
+        - file: ../FOC_Related/AS5600/AS5600.c
+          category: sourceC
+        - file: ../FOC_Related/CONTROL/control.c
+          category: sourceC
+        - file: ../FOC_Related/FOC/FOC.c
+          category: sourceC
+        - file: ../FOC_Related/LOWPASS_FILTER/LowPass_Filter.c
+          category: sourceC
+        - file: ../FOC_Related/PID/pid.c
+          category: sourceC
+        - file: ../FOC_Related/HALL/HALL.c
+          category: sourceC
+        - file: ../FOC_Related/ABZ/ABZ.c
+          category: sourceC
+        - file: ../Core/Src/main.c
+          category: sourceC
+        - file: ../Core/Src/gpio.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/adc.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/dma.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/fdcan.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/i2c.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/usart.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/tim.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Core/Src/stm32g4xx_it.c
+          category: sourceC
+        - file: ../Core/Src/stm32g4xx_hal_msp.c
+          category: sourceC
+    - group: Drivers/STM32G4xx_HAL_Driver
+      files:
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c
+          category: sourceC
+          misc:
+            CPP:
+              - -xc++
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
+          category: sourceC
+        - file: ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
+          category: sourceC
+    - group: Drivers/CMSIS
+      files:
+        - file: ../Core/Src/system_stm32g4xx.c
+          category: sourceC
+  constructed-files:
+    - file: RTE/_STM32G474RETxDemoBlink/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: ARM::CMSIS@5.9.0
+      components:
+        - component: ARM::CMSIS:CORE@5.6.0
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/Keil/STM32G4xx_DFP/1.6.0/LICENSE
+      packs:
+        - pack: Keil::STM32G4xx_DFP@1.6.0
