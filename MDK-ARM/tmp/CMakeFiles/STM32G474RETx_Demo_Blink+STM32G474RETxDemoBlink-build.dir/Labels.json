@@ -1,0 +1,37 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-build"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-build.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-build.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-update.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-download.rule"
+		},
+		{
+			"file" : "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink/src/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-stamp/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink"
+		],
+		"name" : "STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-build"
+	}
+}

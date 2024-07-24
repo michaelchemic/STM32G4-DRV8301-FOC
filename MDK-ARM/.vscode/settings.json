@@ -19,5 +19,6 @@
         "abz.h": "c",
         "foc.h": "c"
     },
-    "todo-tree.tree.showBadges": true
+    "todo-tree.tree.showBadges": true,
+    "cmake.sourceDirectory": "C:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink"
 }

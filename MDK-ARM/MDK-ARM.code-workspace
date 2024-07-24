@@ -1,15 +1,27 @@
 {
-    "folders": [],
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
     "settings": {
-        "cmsis-csolution.actions": [
-            {
-                "path": "STM32G474RETx_Demo_Blink.csolution.yml",
-                "target": "STM32G474RETxDemoBlink",
-                "config": {
-                    "run": "Flash Device"
-                }
-            }
-        ]
+        "files.associations": {
+            "main.h": "c",
+            "adc.h": "c",
+            "fdcan.h": "c",
+            "dma.h": "c",
+            "i2c.h": "c",
+            "usart.h": "c",
+            "tim.h": "c",
+            "gpio.h": "c",
+            "as5600.h": "c",
+            "stdio.h": "c",
+            "abz.h": "c",
+            "lowpass_filter.h": "c",
+            "control.h": "c",
+            "pid.h": "c",
+            "string.h": "c"
+        }
     },
     "extensions": {}
 }

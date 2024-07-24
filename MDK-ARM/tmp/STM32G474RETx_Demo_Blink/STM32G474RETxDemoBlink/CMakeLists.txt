@@ -1,4 +1,4 @@
-# CMSIS Build CMakeLists generated on 2024-07-18T10:22:58
+# CMSIS Build CMakeLists generated on 2024-07-24T17:16:58
 
 cmake_minimum_required(VERSION 3.22)
 
@@ -6,9 +6,9 @@ cmake_minimum_required(VERSION 3.22)
 
 set(TARGET STM32G474RETx_Demo_Blink)
 set(CPU Cortex-M4)
-set(PRJ_DIR "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM")
-set(OUT_DIR "C:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/out/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink")
-set(INT_DIR "C:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink")
+set(PRJ_DIR "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM")
+set(OUT_DIR "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/out/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink")
+set(INT_DIR "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink")
 set(FPU SP_FPU)
 set(BYTE_ORDER Little-endian)
 set(OPTIMIZE debug)
@@ -16,7 +16,7 @@ set(DEBUG on)
 set(CC_FLAGS_GLOBAL "-std=c99 -fno-rtti -funsigned-char -fshort-enums -fshort-wchar -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality")
 set(CXX_FLAGS_GLOBAL "-xc++ -std=c++03 -fno-rtti -funsigned-char -fshort-enums -fshort-wchar -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality")
 set(LD_FLAGS_GLOBAL "--library_type=microlib --map --load_addr_map_info --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers --strict --summary_stderr --info summarysizes")
-set(LD_SCRIPT "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/STM32G474RETx_Demo_Blink_STM32G474RETxDemoBlink.sct")
+set(LD_SCRIPT "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/STM32G474RETx_Demo_Blink_STM32G474RETxDemoBlink.sct")
 
 set(DEFINES
   STM32G474xx
@@ -26,72 +26,72 @@ set(DEFINES
 )
 
 set(INC_PATHS
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Inc"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Inc"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/CMSIS/Include"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/CONTROL"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/AS5600"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/FOC"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/LOWPASS_FILTER"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/PID"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/ABZ"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/HALL"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/RTE/_STM32G474RETxDemoBlink"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Inc"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Inc"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/CMSIS/Include"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/CONTROL"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/AS5600"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/FOC"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/LOWPASS_FILTER"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/PID"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/ABZ"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/HALL"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/RTE/_STM32G474RETxDemoBlink"
   "C:/Users/Michael_Chemic/AppData/Local/arm/packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include"
   "C:/Users/Michael_Chemic/AppData/Local/arm/packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
 )
 
 set(AS_ARM_SRC_FILES
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/startup_stm32g474xx.s"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/startup_stm32g474xx.s"
 )
 
 set(CC_SRC_FILES
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/adc.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/dma.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/fdcan.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/gpio.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/i2c.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/main.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/stm32g4xx_hal_msp.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/stm32g4xx_it.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/system_stm32g4xx.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/tim.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Core/Src/usart.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/ABZ/ABZ.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/AS5600/AS5600.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/CONTROL/control.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/FOC/FOC.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/HALL/HALL.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/LOWPASS_FILTER/LowPass_Filter.c"
-  "c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/FOC_Related/PID/pid.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/adc.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/dma.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/fdcan.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/gpio.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/i2c.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/main.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/stm32g4xx_hal_msp.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/stm32g4xx_it.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/system_stm32g4xx.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/tim.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Core/Src/usart.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/ABZ/ABZ.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/AS5600/AS5600.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/CONTROL/control.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/FOC/FOC.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/HALL/HALL.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/LOWPASS_FILTER/LowPass_Filter.c"
+  "c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/FOC_Related/PID/pid.c"
 )
 
-set(AS_FLAGS_c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/startup_stm32g474xx.s "-masm=auto")
+set(AS_FLAGS_c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/startup_stm32g474xx.s "-masm=auto")
 
 # Toolchain config map
 

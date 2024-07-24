@@ -35,7 +35,7 @@ rule C_COMPILER__STM32G474RETx_Demo_Blink_unscanned_
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__STM32G474RETx_Demo_Blink_
-  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && c:\Users\Michael_Chemic\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\2139c4c6\compilers.arm.armclang\6.22.0\bin\armlink.exe --cpu=Cortex-M4 --scatter="c:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/STM32G474RETx_Demo_Blink_STM32G474RETxDemoBlink.sct" --library_type=microlib --map --load_addr_map_info --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers --strict --summary_stderr --info summarysizes --debug    $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES $in -o $TARGET_FILE  --list=$TARGET_FILE.map && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && c:\Users\Michael_Chemic\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\2139c4c6\compilers.arm.armclang\6.22.0\bin\armlink.exe --cpu=Cortex-M4 --scatter="c:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/STM32G474RETx_Demo_Blink_STM32G474RETxDemoBlink.sct" --library_type=microlib --map --load_addr_map_info --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers --strict --summary_stderr --info summarysizes --debug    $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES $in -o $TARGET_FILE  --list=$TARGET_FILE.map && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\Michael_Chemic\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --regenerate-during-build -SC:\Users\Michael_Chemic\Desktop\STM32G474RETx_FOC\MDK-ARM\tmp\STM32G474RETx_Demo_Blink\STM32G474RETxDemoBlink -BC:\Users\Michael_Chemic\Desktop\STM32G474RETx_FOC\MDK-ARM\tmp\STM32G474RETx_Demo_Blink\STM32G474RETxDemoBlink
+  command = C:\Users\Michael_Chemic\AppData\Roaming\Code\User\globalStorage\ms-vscode.vscode-embedded-tools\vcpkg\root\downloads\artifacts\2139c4c6\tools.kitware.cmake\3.28.4\bin\cmake.exe --regenerate-during-build -SC:\Users\Michael_Chemic\Desktop\STM32G4-DRV8301-FOC\MDK-ARM\tmp\STM32G474RETx_Demo_Blink\STM32G474RETxDemoBlink -BC:\Users\Michael_Chemic\Desktop\STM32G4-DRV8301-FOC\MDK-ARM\tmp\STM32G474RETx_Demo_Blink\STM32G474RETxDemoBlink
   description = Re-running CMake...
   generator = 1
 

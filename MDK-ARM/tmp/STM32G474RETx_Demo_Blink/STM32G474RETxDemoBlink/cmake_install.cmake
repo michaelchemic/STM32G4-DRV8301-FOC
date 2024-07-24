@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink
+# Install script for directory: C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Michael_Chemic/Desktop/STM32G474RETx_FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/STM32G474RETx_Demo_Blink/STM32G474RETxDemoBlink/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
