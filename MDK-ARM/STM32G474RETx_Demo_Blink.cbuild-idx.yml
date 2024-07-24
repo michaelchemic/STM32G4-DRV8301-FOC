@@ -1,6 +1,7 @@
 build-idx:
-  generated-by: csolution version 2.4.0
+  generated-by: csolution version 2.5.0
   csolution: STM32G474RETx_Demo_Blink.csolution.yml
+  tmpdir: tmp
   cprojects:
     - cproject: STM32G474RETx_Demo_Blink.cproject.yml
   cbuilds:
