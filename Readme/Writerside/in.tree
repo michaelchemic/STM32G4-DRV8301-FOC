@@ -4,7 +4,11 @@
 
 <instance-profile id="in"
                  name="Instance Name"
-                 start-page="starter.md">
+>
 
-    <toc-element topic="starter.md"/>
+    <toc-element toc-title="Writerside">
+        <toc-element toc-title="topics">
+            <toc-element topic="Writerside_topics_starter.md"/>
+        </toc-element>
+    </toc-element>
 </instance-profile>

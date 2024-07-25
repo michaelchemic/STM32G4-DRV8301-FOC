@@ -177,8 +177,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   
   
-//  HAL_TIM_Base_Start_IT(&htim3);
-//      // 配置 NVIC 中断优先级和使能
+//    HAL_TIM_Base_Start_IT(&htim3);
+//    // 配置 NVIC 中断优先级和使能
 //    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
 //    HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
