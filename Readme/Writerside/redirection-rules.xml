@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="28b0b272">
+        <description>Created after removal of "How to" from Instance Name</description>
+        <accepts>How-to.html</accepts>
+    </rule>
+    <rule id="758dd829">
+        <description>Created after removal of "原理图篇" from Instance Name</description>
+        <accepts>原理图篇.html</accepts>
+    </rule>
+    <rule id="5f651e36">
+        <description>Created after removal of "原理图设计" from Instance Name</description>
+        <accepts>原理图设计.html</accepts>
+    </rule>
+    <rule id="6c3b7c1a">
+        <description>Created after removal of "性能对比" from Instance Name</description>
+        <accepts>性能与价格对比.html</accepts>
+    </rule>
+    <rule id="65e9edd8">
+        <description>Created after removal of "RK3399原理图设计" from Instance Name</description>
+        <accepts>RK3399原理图设计.html</accepts>
+    </rule>
+    <rule id="56996748">
+        <description>Created after removal of "电源系统及推荐上电顺序" from Instance Name</description>
+        <accepts>电源系统及推荐上电顺序.html</accepts>
+    </rule>
+    <rule id="4d70817e">
+        <description>Created after removal of "DDR控制器" from Instance Name</description>
+        <accepts>DDR控制器.html</accepts>
+    </rule>
+    <rule id="22da0e68">
+        <description>Created after removal of "eMMC控制器" from Instance Name</description>
+        <accepts>eMMC控制器.html</accepts>
+    </rule>
+    <rule id="7770b9d9">
+        <description>Created after removal of "原理图文件结构" from Instance Name</description>
+        <accepts>文件结构.html</accepts>
+    </rule>
+    <rule id="4edcd90a">
+        <description>Created after removal of "原理图封装绘制" from Instance Name</description>
+        <accepts>原理图封装绘制.html</accepts>
+    </rule>
+    <rule id="d1b4c02">
+        <description>Created after removal of "原理图DRC检查" from Instance Name</description>
+        <accepts>原理图DRC检查.html</accepts>
+    </rule>
+    <rule id="31bd30f0">
+        <description>Created after removal of "PCB设计" from Instance Name</description>
+        <accepts>PCB设计.html</accepts>
+    </rule>
+    <rule id="17c459c2">
+        <description>Created after removal of "PCB封装库设置" from Instance Name</description>
+        <accepts>PCB封装库.html</accepts>
+    </rule>
+    <rule id="716e56c3">
+        <description>Created after removal of "PCB导入网表" from Instance Name</description>
+        <accepts>PCB导入网表.html</accepts>
+    </rule>
+    <rule id="21e94be6">
+        <description>Created after removal of "《基于Cadance17.4 RK3399原理图PCB设计》" from Instance Name</description>
+        <accepts>starter.html</accepts>
+    </rule>
+    <rule id="28a04047">
+        <description>Created after removal of "Starter" from Instance Name</description>
+        <accepts>topics_starter.html</accepts>
+    </rule>
+</rules>
