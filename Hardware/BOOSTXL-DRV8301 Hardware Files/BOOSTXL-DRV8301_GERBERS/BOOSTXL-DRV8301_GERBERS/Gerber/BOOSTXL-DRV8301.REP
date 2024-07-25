@@ -1,0 +1,350 @@
+*************************************************************
+FileName = BOOSTXL-DRV8301.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top
+      File : BOOSTXL-DRV8301.GTL
+
+    Adding Layer      : Top
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Bottom
+      File : BOOSTXL-DRV8301.GBL
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D27
+    D28
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Silkscreen Top
+      File : BOOSTXL-DRV8301.GTO
+
+    Adding Layer      : Silkscreen Top
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D27
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Paste Mask Top
+      File : BOOSTXL-DRV8301.GTP
+
+    Adding Layer      : Paste Mask Top
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D45
+    D46
+*************************************************************
+
+*************************************************************
+Generating : Solder Mask Top
+      File : BOOSTXL-DRV8301.GTS
+
+    Adding Layer      : Solder Mask Top
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+*************************************************************
+
+*************************************************************
+Generating : Solder Mask Bottom
+      File : BOOSTXL-DRV8301.GBS
+
+    Adding Layer      : Solder Mask Bottom
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D57
+    D58
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Paste Mask Bottom
+      File : BOOSTXL-DRV8301.GBP
+
+    Adding Layer      : Paste Mask Bottom
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D22
+    D23
+    D35
+    D36
+    D38
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Silkscreen Bottom
+      File : BOOSTXL-DRV8301.GBO
+
+    Adding Layer      : Silkscreen Bottom
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D40
+    D41
+    D42
+*************************************************************
+
+*************************************************************
+Generating : M1 Board Outline
+      File : BOOSTXL-DRV8301.GM1
+
+    Adding Layer      : M1 Board Outline
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D27
+*************************************************************
+
+*************************************************************
+Generating : M2 Dimensions
+      File : BOOSTXL-DRV8301.GM2
+
+    Adding Layer      : M2 Dimensions
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D27
+    D42
+*************************************************************
+
+*************************************************************
+Generating : M5 Assembly Top
+      File : BOOSTXL-DRV8301.GM5
+
+    Adding Layer      : M5 Assembly Top
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D41
+    D42
+    D43
+    D44
+    D69
+    D70
+    D71
+    D72
+*************************************************************
+
+*************************************************************
+Generating : M6 Assembly Bottom
+      File : BOOSTXL-DRV8301.GM6
+
+    Adding Layer      : M6 Assembly Bottom
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+    D42
+    D69
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : M9 Title Sheet
+      File : BOOSTXL-DRV8301.GM9
+
+    Adding Layer      : M9 Title Sheet
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : M10 Fab Notes
+      File : BOOSTXL-DRV8301.GM10
+
+    Adding Layer      : M10 Fab Notes
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : M12 Stackup
+      File : BOOSTXL-DRV8301.GM12
+
+    Adding Layer      : M12 Stackup
+
+    Adding Layer      : M11 Gerber Information
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : BOOSTXL-DRV8301.GD1
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Drill Pair : Top-Bottom
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D27
+    D69
+    D74
+    D75
+    D76
+    D77
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BOOSTXL-DRV8301.GG1
+
+    Adding Layer      : M11 Gerber Information
+
+    Adding Drill Pair : Top-Bottom
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D69
+*************************************************************
+

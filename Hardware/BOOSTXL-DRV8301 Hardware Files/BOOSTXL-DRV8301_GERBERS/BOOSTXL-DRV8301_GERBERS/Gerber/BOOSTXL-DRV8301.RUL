@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: C:\Users\a0273408\Documents\EVM\BOOSTXL-DRV8301\BOARD\BOOSTXL-DRV8301\BOOSTXL-DRV8301.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_Poly_GND|Scope=Board|Minimum=10.00
+RuleKind=SolderMaskExpansion|RuleName=Solder Mask Expansion from CAM settings|Scope=Board|Minimum=2.00
+RuleKind=Clearance|RuleName='Default' PADS rule_18|Scope=Board|Minimum=6.00
+RuleKind=Clearance|RuleName='Default' PADS rule_15|Scope=Board|Minimum=6.00
+RuleKind=Width|RuleName='Default' PADS rule_13|Scope=Board|Minimum=10.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

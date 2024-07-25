@@ -53,7 +53,7 @@
 /* USER CODE BEGIN PTD */
 
 // 根据不同电机参数设置
-int PP = 12;  // pole_pairs极对数 磁极数/2
+int PP = 12; // pole_pairs极对数 磁极数/2
 int DIR = 1; // 无刷电机纠偏旋转方向
 
 extern float raw_angle; // 获取AS5600原始角度值。
@@ -131,14 +131,14 @@ void SystemClock_Config(void);
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
-  * @retval int
-  */
+ * @brief  The application entry point.
+ * @retval int
+ */
 int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-//test
+  // test
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -175,13 +175,13 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  
-  
-//    HAL_TIM_Base_Start_IT(&htim3);
-//    // 配置 NVIC 中断优先级和使能
-//    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
-//    HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
+  //    HAL_TIM_Base_Start_IT(&htim3);
+
+  // 配置 NVIC 中断优先级和使能
+  //     HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+
+  //    HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
   // 定义ADC滤波器结构体
   // ADC_Filter_t adc_filter;
@@ -191,16 +191,13 @@ int main(void)
   ADC_Filter_Init(&adc1_filter_Ic);
   FOC_Init(voltage_power_supply); // 设置电源电压。
   FOC_AS5600_Init(PP, DIR);       // 极对数，正补偿方向。
-  TIM2_M1_ABZ();//TIM2 ABZ编码器接口初始化。
-  TIM3_M2_ABZ();//TIM2 ABZ编码器接口初始化。
+  TIM2_M1_ABZ();                  // TIM2 ABZ编码器接口初始化。
+  TIM3_M2_ABZ();                  // TIM2 ABZ编码器接口初始化。
   // G474可以带两路电机，此处控制DRV8301 EN脚。
   HAL_GPIO_WritePin(M1_EN_GPIO_Port, M1_EN_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(M2_EN_GPIO_Port, M2_EN_Pin, GPIO_PIN_SET);
-
   // char *msg = "Hello, World!\r\n";//串口1发送测试
-
   /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
@@ -211,19 +208,17 @@ int main(void)
     /* USER CODE BEGIN 3 */
     // HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);//串口1发送测试
     // HAL_Delay(1000); // 1 second delay
-//  volatile  int speed=100;
-//      if (AS5600_ReadRawAngle(&hi2c1, &raw_angle) == HAL_OK)
-//      {
+    // volatile  int speed=100;
+    // if (AS5600_ReadRawAngle(&hi2c1, &raw_angle) == HAL_OK)
+    // {
+    //    Set_Angle(5);    // 位置闭环。
+    //    Set_Speed(speed);// 速度闭环。
+    // }
 
-// //    //   Set_Angle(5); // 位置闭环。
-// //     
-//        //Set_Speed(speed);//速度闭环。
-//      }  
+    //  UpdataEncoderCnt();
 
-    //UpdataEncoderCnt();
-
-    //Count_M1_ABZ();//ABZ调试计数
-   Count_M2_ABZ();
+    //  Count_M1_ABZ();//ABZ调试计数
+    Count_M2_ABZ();
 
     //  Send_ADC1_Values(&huart1);
     //  读取新的ADC值（假设Read_ADC_Value()是你获取ADC值的函数）
@@ -251,21 +246,21 @@ int main(void)
 }
 
 /**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+ * @brief System Clock Configuration
+ * @retval None
+ */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
   /** Configure the main internal regulator output voltage
-  */
+   */
   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
 
   /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
+   * in the RCC_OscInitTypeDef structure.
+   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -282,9 +277,8 @@ void SystemClock_Config(void)
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+   */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -301,9 +295,9 @@ void SystemClock_Config(void)
 /* USER CODE END 4 */
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
@@ -315,14 +309,14 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */

@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: BOOSTXL-DRV8301.GBR   10/8/2013  11:17:04 AM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                Top                                     
+.GBL                Bottom                                  
+.GTO                Silkscreen Top                          
+.GTP                Paste Mask Top                          
+.GTS                Solder Mask Top                         
+.GBS                Solder Mask Bottom                      
+.GBP                Paste Mask Bottom                       
+.GBO                Silkscreen Bottom                       
+.GM1                M1 Board Outline                        
+.GM2                M2 Dimensions                           
+.GM5                M5 Assembly Top                         
+.GM6                M6 Assembly Bottom                      
+.GM9                M9 Title Sheet                          
+.GM10               M10 Fab Notes                           
+.GM12               M12 Stackup                             
+.GD1                Drill Drawing                           
+.GG1                Drill Guide                             
+------------------------------------------------------------------------------------------

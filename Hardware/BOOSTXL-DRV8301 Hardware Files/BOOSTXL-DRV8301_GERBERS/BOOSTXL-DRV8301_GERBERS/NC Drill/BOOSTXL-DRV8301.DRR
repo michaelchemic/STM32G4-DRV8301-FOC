@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BOOSTXL-DRV8301.PcbDoc   10/8/2013  11:17:06 AM
+---------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : BOOSTXL-DRV8301.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        13mil (0.3302mm)         Round          27               1.25 Inch (31.75 mm)
+T2        15mil (0.381mm)          Round          343              36.91 Inch (937.45 mm)
+T3        49.21mil (1.24993mm)     Round          5                1.05 Inch (26.55 mm)
+---------------------------------------------------------------------------
+Totals                                            375              39.20 Inch (995.75 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

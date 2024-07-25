@@ -1,79 +1,8 @@
-// #include "tim.h"
-// #include "ABZ.h"
-
-// void TIM2_M1_ABZ(void)
-// {
-// // 启动编码器模式
-// HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
-
-// // 启动索引中断
-// HAL_TIMEx_EnableEncoderIndex(&htim2);
-
-// }
-
-// void TIM2_M2_ABZ(void)
-// {
-// // 启动编码器模式
-// HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
-
-// // 启动索引中断
-// HAL_TIMEx_EnableEncoderIndex(&htim3);
-
-// }
-
-// void Count_M1_ABZ(void)
-// {
-//   // Debug：读取编码器计数值
-//     volatile int32_t encoder_count = __HAL_TIM_GET_COUNTER(&htim2);
-
-// }
-
-
-
-// void Count_M2_ABZ(void)
-// {
-//   // Debug：读取编码器计数值
-//     volatile int32_t encoder_count = __HAL_TIM_GET_COUNTER(&htim3);
-
-// }
-
-// // 中断服务函数
-// void HAL_TIMEx_EncoderIndexCallback(TIM_HandleTypeDef *htim)
-// {
-//     if (htim->Instance == TIM3)
-//     {
-//         // 索引信号中断处理逻辑
-//         // 可以在这里重置编码器计数值，或者记录当前计数值
-//         __HAL_TIM_SET_COUNTER(htim, 0);
-//         // printf("Encoder Index detected!\r\n");
-//     }
-// }
-
-// //电机速度计算
-// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-// {
-//     if (htim == &ENCODER_TIMER)
-//     {
-//         // 获取当前脉冲计数
-//         pulse_count = __HAL_TIM_GET_COUNTER(&ENCODER_TIMER);
-
-//         // 计算脉冲增量
-//         int32_t pulse_delta = pulse_count - prev_pulse_count;
-
-//         // 计算速度 (PPS: 脉冲每秒)
-//         // 假设定时器周期为1秒，则速度为脉冲增量
-//         speed = (float)pulse_delta;
-
-//         // 更新上次脉冲计数
-//         prev_pulse_count = pulse_count;
-//     }
-// }
-
 #include "tim.h"
 #include "ABZ.h"
 #include "foc.h"
 
-    int realCnt = 0;
+int realCnt = 0;
 
 ABZ_Encoder encoderDef;
 
@@ -120,16 +49,16 @@ void Count_M2_ABZ(void)
 }
 
 //// 中断服务函数
-//void HAL_TIMEx_EncoderIndexCallback(TIM_HandleTypeDef *htim)
+// void HAL_TIMEx_EncoderIndexCallback(TIM_HandleTypeDef *htim)
 //{
-//    if (htim->Instance == TIM3)
-//    {
-//        // 索引信号中断处理逻辑
-//        // 可以在这里重置编码器计数值，或者记录当前计数值
-//        __HAL_TIM_SET_COUNTER(htim, 0);
-//        // printf("Encoder Index detected!\r\n");
-//    }
-//}
+//     if (htim->Instance == TIM3)
+//     {
+//         // 索引信号中断处理逻辑
+//         // 可以在这里重置编码器计数值，或者记录当前计数值
+//         __HAL_TIM_SET_COUNTER(htim, 0);
+//         // printf("Encoder Index detected!\r\n");
+//     }
+// }
 
 // 电机速度和角度计算
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -158,42 +87,41 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 int UpdataEncoderCnt(void)
-{   
+{
     // 启动编码器模式
     HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 
     // 启动索引中断
     HAL_TIMEx_EnableEncoderIndex(&htim3);
-	//获取电机读数
-	
-	encoderDef.cnt = (int32_t)__HAL_TIM_GET_COUNTER(&htim3);
-    
+    // 获取电机读数
+
+    encoderDef.cnt = (int32_t)__HAL_TIM_GET_COUNTER(&htim3);
+
     encoderDef.preCnt = encoderDef.cnt;
-	//计算电机偏移量
-	encoderDef.incCnt = ModifyIncCnt(encoderDef.cnt - encoderDef.preCnt);
-	// 获取真实的编码器计数值
+    // 计算电机偏移量
+    encoderDef.incCnt = ModifyIncCnt(encoderDef.cnt - encoderDef.preCnt);
+    // 获取真实的编码器计数值
     realCnt = encoderDef.cnt - encoderDef.offsetCnt;
-	// 当计数值为负数时，加上一圈的计数数
-	while(realCnt<0)
-	{
-		realCnt += ENCODER_PULSES_PER_REV * 4;
-	}
-	// 计算真实的角度值
-	encoderDef.angle=encoderDef.cnt*2*PI / ENCODER_PULSES_PER_REV / 4;
-    
-	// 计算电角度
-	encoderDef.elecAngle = _normalizeAngle(encoderDef.angle);
-    
-	// 返回编码器读数
-	return encoderDef.cnt;
+    // 当计数值为负数时，加上一圈的计数数
+    while (realCnt < 0)
+    {
+        realCnt += ENCODER_PULSES_PER_REV * 4;
+    }
+    // 计算真实的角度值
+    encoderDef.angle = encoderDef.cnt * 2 * PI / ENCODER_PULSES_PER_REV / 4;
+
+    // 计算电角度
+    encoderDef.elecAngle = _normalizeAngle(encoderDef.angle);
+
+    // 返回编码器读数
+    return encoderDef.cnt;
 }
 
 //// 3. 定义中断服务程序
-//void TIM3_IRQHandler(void)
+// void TIM3_IRQHandler(void)
 //{
-//    HAL_TIM_IRQHandler(&htim3);
-//}
-
+//     HAL_TIM_IRQHandler(&htim3);
+// }
 
 int16_t ModifyIncCnt(int16_t delta)
 {
@@ -208,4 +136,3 @@ int16_t ModifyIncCnt(int16_t delta)
     }
     return delta;
 }
-
