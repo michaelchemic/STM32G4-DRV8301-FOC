@@ -20,8 +20,19 @@
             "lowpass_filter.h": "c",
             "control.h": "c",
             "pid.h": "c",
-            "string.h": "c"
-        }
+            "string.h": "c",
+            "foc.h": "c"
+        },
+        "cmsis-csolution.actions": [
+            {
+                "path": "STM32G474RETx_Demo_Blink.csolution.yml",
+                "target": "STM32G474RETxDemoBlink",
+                "config": {
+                    "run": "Flash Device",
+                    "debug": "Arm Debugger"
+                }
+            }
+        ]
     },
     "extensions": {}
 }

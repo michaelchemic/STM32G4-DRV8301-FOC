@@ -88,6 +88,7 @@ float AS5600_GetVelocity(void)
 
     // 计算采样时间
     angle_prev_ts = SysTick->VAL; // 获取当前时间戳
+    
     if (angle_prev_ts < vel_angle_prev_ts)
         Ts = (float)(vel_angle_prev_ts - angle_prev_ts); // 计算时间差
     else
@@ -104,44 +105,6 @@ float AS5600_GetVelocity(void)
 
     return vel; // 返回速度
 }
-
-//float AS5600_GetVelocity(void)
-//{
-//    float Ts, vel = 0.0f; // Ts为采样时间，vel为速度
-
-//    // 获取当前时间戳
-//    uint32_t current_ts = SysTick->VAL;
-
-//    // 计算采样时间，SysTick->LOAD的值为系统定时器重装值
-//    if (current_ts < vel_angle_prev_ts)
-//        Ts = (float)(vel_angle_prev_ts - current_ts) / SysTick->LOAD * 1e-6f; // 计算时间差
-//    else
-//        Ts = (float)(0xFFFFFF - current_ts + vel_angle_prev_ts) / SysTick->LOAD * 1e-6f; // 处理时间戳溢出情况
-
-//    // 快速修复微小溢出
-//    if (Ts == 0 || Ts > 0.5f)
-//        Ts = 1e-3f; // 防止采样时间为0或过大
-
-//    // 获取当前角度
-//    float current_angle = AS5600_GetAngle();
-
-//    // 计算角度差值，处理角度溢出情况（假设角度范围是0到360度）
-//    float angle_diff = current_angle - vel_angle_prev_Velocity;
-//    if (angle_diff > 180.0f)
-//        angle_diff -= 360.0f;
-//    else if (angle_diff < -180.0f)
-//        angle_diff += 360.0f;
-
-//    // 计算速度
-//    vel = angle_diff / Ts;
-
-//    // 更新上次角度和时间戳
-//    vel_angle_prev_Velocity = current_angle;
-//    vel_angle_prev_ts = current_ts;
-
-//    return vel; // 返回速度
-//}
-
 
 // 磁编码器速度低通滤波计算:(0-∞)
 float AS5600_Get_Speed(void)

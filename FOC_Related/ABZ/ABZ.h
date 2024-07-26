@@ -6,12 +6,12 @@
 #define ENCODER_HALF_COUNT (ENCODER_MAX_COUNT / 2)  // 定时器计数器的中间值
 
 typedef struct{
-    int16_t preCnt;
-    int16_t cnt;
-    int16_t offsetCnt;
-    int16_t angle;
-    int16_t elecAngle;
-    int16_t incCnt;
+    int32_t preCnt;
+    int32_t cnt;
+    int32_t offsetCnt;
+    int32_t angle;
+    int32_t elecAngle;
+    int32_t incCnt;
 }ABZ_Encoder;
 
 
@@ -22,5 +22,11 @@ void TIM3_M2_ABZ(void);
 void Count_M2_ABZ(void);
 
 int16_t ModifyIncCnt(int16_t delta);
-int UpdataEncoderCnt(void);
+int UpdateEncoderCnt(void);
+
+float ABZ_GetAngle360(void);
+float ABZ_GetAngle2PI(void);
+float ABZ_GetAngle(void);
+float ABZ_GetVelocity(void);
+
 #endif

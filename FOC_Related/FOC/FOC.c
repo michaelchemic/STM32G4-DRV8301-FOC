@@ -149,13 +149,10 @@ void FOC_AS5600_Init(int _PP, int _DIR)
     PP = _PP;
     DIR = _DIR;
     
-//    setTorque(3, _2PI);
-
-//   
-//HAL_Delay(3000);
+    setTorque(3, _2PI);
+    HAL_Delay(3000);
    
     setTorque(0, _2PI);
-
 
     zero_electric_angle = _electricalAngle(); // 设置零点角度。
     Sensor_Speed = AS5600_Get_Speed();        // 速度初始值计算。
@@ -217,7 +214,6 @@ void Open_Loop_Control(float Uq, float speed)
         angle_el = _normalizeAngle(angle_el);
         // 设置力矩
         setTorque(Uq, angle_el);
-
 
         // 获取当前ADC值
         // 调试打印：确保ADC值已经被正确读取

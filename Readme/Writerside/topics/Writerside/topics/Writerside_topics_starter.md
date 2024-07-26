@@ -59,6 +59,8 @@ You can use it as a sandbox to play with Writerside features, and remove it from
 
 ![三角函数复习资料.png](三角函数复习资料.png)
 
+摘自：[](https://www.cnblogs.com/sunsky303/p/17248071.html)
+
 ![Clarke变换.png](Clarke变换.png)
 
 3，Clarke变换写成矩阵形式

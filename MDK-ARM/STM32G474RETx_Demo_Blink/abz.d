@@ -40,4 +40,5 @@ stm32g474retx_demo_blink/abz.o: ..\FOC_Related\ABZ\ABZ.c \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
   ..\FOC_Related\LOWPASS_FILTER\LowPass_Filter.h ..\Core\Inc\adc.h \
-  ..\FOC_Related\ABZ\ABZ.h ..\FOC_Related\FOC\foc.h ..\Core\Inc\usart.h
+  ..\FOC_Related\ABZ\ABZ.h ..\FOC_Related\FOC\foc.h ..\Core\Inc\usart.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h
