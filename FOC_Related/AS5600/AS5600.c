@@ -53,23 +53,29 @@ HAL_StatusTypeDef AS5600_ReadAngle(I2C_HandleTypeDef *hi2c1, float *angle)
     return HAL_OK; // 返回成功状态
 }
 
+
 // 把原始值解算成编码器360°值
 float AS5600_GetAngle360(void)
 {
     return raw_angle * 0.08789f; // 将原始值转换为0-360°的角度
 }
 
+float Debug_raw_angle;
 // 读取磁编码器归一化弧度值:(0-6.28)
 float AS5600_GetAngle2PI(void)
 {
+    Debug_raw_angle = raw_angle * 0.08789f / 57.32484f;
+    
     return raw_angle * 0.08789f / 57.32484f; // 将原始值转换为0-2π的弧度
 }
+
+float val,d_angle;
 
 // 磁编码器弧度制角度累计计算:(0-∞)
 float AS5600_GetAngle(void)
 {
-    float val = AS5600_GetAngle2PI(); // 获取当前角度
-    float d_angle = val - angle_prev; // 计算角度变化
+     val = AS5600_GetAngle2PI(); // 获取当前角度
+     d_angle = val - angle_prev; // 计算角度变化
 
     // 计算旋转的圈数
     // 通过判断角度变化是否大于80%的一圈(0.8f*6.28318530718f)来判断是否发生了溢出
@@ -81,10 +87,11 @@ float AS5600_GetAngle(void)
     return (float)full_rotations * 6.28318530718f + angle_prev; // 返回累计角度
 }
 
+ float Ts, vel = 0.0f; // Ts为采样时间，vel为速度
 // 磁编码器速度计算:(0-∞)
 float AS5600_GetVelocity(void)
 {
-    float Ts, vel = 0.0f; // Ts为采样时间，vel为速度
+    //float Ts, vel = 0.0f; // Ts为采样时间，vel为速度
 
     // 计算采样时间
     angle_prev_ts = SysTick->VAL; // 获取当前时间戳
@@ -106,10 +113,11 @@ float AS5600_GetVelocity(void)
     return vel; // 返回速度
 }
 
+float vel_M0_flit;
 // 磁编码器速度低通滤波计算:(0-∞)
 float AS5600_Get_Speed(void)
 {
     float vel_M0_ori = AS5600_GetVelocity(); // 速度原始数据采集
-    float vel_M0_flit = LowPass_Filter(DIR * vel_M0_ori); // 原始数据低通滤波
+     vel_M0_flit = LowPass_Filter(DIR * vel_M0_ori); // 原始数据低通滤波
     return vel_M0_flit; // 返回滤波后的速度
 }

@@ -53,7 +53,7 @@
 /* USER CODE BEGIN PTD */
 
 // 根据不同电机参数设置
-int PP = 1; // pole_pairs极对数 磁极数/2
+int PP = 7; // pole_pairs极对数 磁极数/2
 int DIR = 1; // 无刷电机纠偏旋转方向
 
 extern float raw_angle; // 获取AS5600原始角度值。
@@ -70,6 +70,9 @@ float dc_a = 0, dc_b = 0, dc_c = 0; // SPWM占空比设置。
 
 float Sensor_Angle = 0; // 解算出来的无刷电机运行状态下的实际角度。
 float Sensor_Speed = 0; // 解算出来的无刷电机实际速度。
+
+float ABZ_Sensor_Speed = 0; // 解算出来的无刷电机实际速度。
+float ABZ_Sensor_Angle = 0;
 
 uint32_t adc1_Ia = 0, adc1_Ib = 0, adc1_Ic = 0; // 电机1相电流采样电阻采集到的实际电流。
 uint32_t adc2_Ia = 0, adc2_Ib = 0, adc2_Ic = 0; // 电机2相电流采样电阻采集到的实际电流。
@@ -177,18 +180,21 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // 配置 NVIC 中断优先级和使能
-  HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(TIM3_IRQn);
-  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(TIM2_IRQn);
+//  HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+//  HAL_NVIC_EnableIRQ(TIM3_IRQn);
+//  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
+//  HAL_NVIC_EnableIRQ(TIM2_IRQn);
 
   // 初始化电机M1 ADC1滤波器
   ADC_Filter_Init(&adc1_filter_Ia);
   ADC_Filter_Init(&adc1_filter_Ib);
   ADC_Filter_Init(&adc1_filter_Ic);
 
-  FOC_Init(voltage_power_supply); // 设置电源电压。
-  FOC_AS5600_Init(PP, DIR);       // 极对数，正补偿方向。
+  FOC_Init(voltage_power_supply); // 设置电源电压，PID初始化。
+
+ //FOC_AS5600_Init(PP, DIR);       // 极对数，正补偿方向。
+ FOC_ABZ_Init(PP, DIR);  
+ 
   TIM2_M1_ABZ();                  // TIM2 ABZ编码器接口初始化并启动。
   TIM3_M2_ABZ();                  // TIM3 ABZ编码器接口初始化并启动。
 
@@ -217,20 +223,23 @@ int main(void)
     // HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);//串口1发送测试
     // HAL_Delay(1000); // 1 second delay
     
-    volatile  int speed=1;
-    if (AS5600_ReadRawAngle(&hi2c1, &raw_angle) == HAL_OK)
-    {
-       //Set_Angle(10);    // 位置闭环。
-       Set_Speed(speed);// 速度闭环。
-    }
-    
+//    volatile  int speed=1;
+//    if (AS5600_ReadRawAngle(&hi2c1, &raw_angle) == HAL_OK)
+//    {
+//       Set_Angle(5);    // 位置闭环。
+//       //Set_Speed(speed);// 速度闭环。
+//    }
+      
+     // ABZ_Set_Angle(5); 
+       ABZ_Set_Speed(100);// 速度闭环。
+
     // openloop debug
     // Current_Speed(2.0f, 0.1f);
     // Open_Loop_Control(0.2f, -0.1f); // 开环控制顺时针，设置电压和速度。
     // Open_Loop_Control(1.0f, -0.01f); // 开环控制逆时针，设置电压和速度。
 
     // ABZ编码器debug
-    UpdateEncoderCnt();
+    // UpdateEncoderCnt();
     // Count_M1_ABZ();
     // Count_M2_ABZ();//开发板只预留了M2 的ABZ编码器接口。
 

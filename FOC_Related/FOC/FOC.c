@@ -11,6 +11,7 @@
 #include "stdio.h"
 #include "adc.h"
 #include "LowPass_Filter.h"
+#include "ABZ.h"
 
 extern int PP;
 extern int DIR;
@@ -23,6 +24,11 @@ extern float Ua, Ub, Uc;
 extern float dc_a, dc_b, dc_c;
 extern float Sensor_Angle;
 extern float Sensor_Speed;
+
+extern float ABZ_Sensor_Speed;
+
+extern float ABZ_Sensor_Angle;
+
 extern uint32_t adc1_Ia, adc1_Ib, adc1_Ic;
 extern uint32_t adc2_Ia, adc2_Ib, adc2_Ic;
 extern float current1_A;
@@ -71,6 +77,11 @@ void Systick_CountMode(void)
 float _electricalAngle()
 {
     return _normalizeAngle((float)(DIR * PP) * AS5600_GetAngle2PI() - zero_electric_angle);
+}
+//////debug ABZ Encoder//////
+float ABZ_electricalAngle()
+{
+    return _normalizeAngle((float)(DIR * PP) * ABZ_GetAngle2PI() - zero_electric_angle);
 }
 
 /*******************************************
@@ -133,10 +144,9 @@ FOC控制初始化:
 *******************************************/
 void FOC_Init(float power_supply)
 {
-    voltage_power_supply = power_supply; // 电源电压
+    voltage_power_supply = power_supply; // 电源电压传参。
     // 此处增加自定义硬件初始化。
-    // NVIC_Config();中断优先级分配
-    PID_init(); // 初始化pid变量
+    PID_init(); // pid初始化。
     
 }
 
@@ -157,10 +167,41 @@ void FOC_AS5600_Init(int _PP, int _DIR)
     zero_electric_angle = _electricalAngle(); // 设置零点角度。
     Sensor_Speed = AS5600_Get_Speed();        // 速度初始值计算。
 }
+/////ABZ Encoder debug/////
+void FOC_ABZ_Init(int _PP, int _DIR)
+{
+    // 值传递。
+    PP = _PP;
+    DIR = _DIR;
+    
+    setTorque(2, _2PI);
+    HAL_Delay(3000);
+   
+    setTorque(0, _2PI);
+
+    zero_electric_angle = ABZ_electricalAngle(); // 设置零点角度。
+    ABZ_Sensor_Speed = ABZ_Get_Speed();        // 速度初始值计算。
+}
 
 /***********************************************
 电机角度控制:(rad)
 ***********************************************/
+// ABZ编码器
+void ABZ_Set_Angle(float Angle)
+{
+    // ABZ编码器角度读取。
+    ABZ_Sensor_Angle = ABZ_GetAngle();
+    // 角度控制。
+    Angle_Out = Angle_Control((Angle - DIR *  ABZ_Sensor_Angle) * 180.0f / PI);
+    // 控制力矩限幅。
+    Moment_limiting();
+    // 设置力矩。
+    setTorque(Angle_Out, ABZ_electricalAngle());
+
+    // 角度串口打印输出调试
+    // printf("%.2f,%.2f\n",Sensor_Angle,Angle_target);
+}
+// AS5600编码器
 void Set_Angle(float Angle)
 {
     // AS5600角度读取。
@@ -179,6 +220,22 @@ void Set_Angle(float Angle)
 /***********************************************
 电机速度控制:(rad/s)
 ***********************************************/
+// ABZ编码器
+ void ABZ_Set_Speed(float Speed)
+ {
+     // 读取ABZ编码器解算后的数据。
+     ABZ_Sensor_Speed = ABZ_Get_Speed();
+     // 速度PID控制
+     Speed_Out = Speed_Control(Speed - ABZ_Sensor_Speed);
+     // 控制力矩限幅
+     Moment_limiting();
+     // 驱动器力矩控制
+     setTorque(Speed_Out, ABZ_electricalAngle());
+    
+     // 速度串口打印输出调试
+     // printf("%.2f,%.2f\n",Sensor_Speed,Speed_target);
+ }
+// AS5600编码器
 void Set_Speed(float Speed)
 {
     // AS5600读取解算后的数据。
@@ -193,6 +250,8 @@ void Set_Speed(float Speed)
     // 速度串口打印输出调试
     // printf("%.2f,%.2f\n",Sensor_Speed,Speed_target);
 }
+
+
 
 /***********************************************
 电机开环旋转:

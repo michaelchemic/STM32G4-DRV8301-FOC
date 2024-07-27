@@ -21,12 +21,13 @@ void Count_M1_ABZ(void);
 void TIM3_M2_ABZ(void);
 void Count_M2_ABZ(void);
 
-int16_t ModifyIncCnt(int16_t delta);
-int UpdateEncoderCnt(void);
+//int16_t ModifyIncCnt(int16_t delta);
+//int UpdateEncoderCnt(void);
 
 float ABZ_GetAngle360(void);
 float ABZ_GetAngle2PI(void);
 float ABZ_GetAngle(void);
 float ABZ_GetVelocity(void);
+float ABZ_Get_Speed(void);
 
 #endif

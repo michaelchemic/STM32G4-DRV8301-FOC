@@ -98,11 +98,13 @@ void Moment_limiting(void)
         Angle_Out = 6; // 角度环力矩输出限幅
     if (Angle_Out < -6)
         Angle_Out = -6;
+    
     if (Speed_Out > 6)
         Speed_Out = 6; // 速度环力矩输出限幅
     if (Speed_Out < -6)
         Speed_Out = -6;
     if (Current_Out > 6)
+        
         Current_Out = 6; // 电流环力矩输出限幅
     if (Current_Out < -6)
         Current_Out = -6;

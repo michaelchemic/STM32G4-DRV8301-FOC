@@ -44,4 +44,5 @@ stm32g474retx_demo_blink/foc.o: ..\FOC_Related\FOC\FOC.c \
   ..\FOC_Related\AS5600\as5600.h ..\FOC_Related\CONTROL\control.h \
   ..\Core\Inc\tim.h ..\FOC_Related\PID\pid.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\FOC_Related\ABZ\ABZ.h

@@ -24,4 +24,8 @@ void Feedback_Current(void);
 
 void Send_ADC1_Values(UART_HandleTypeDef *huart);
 
+void ABZ_Set_Angle(float Angle);
+void ABZ_Set_Speed(float Speed);
+float ABZ_electricalAngle(void);
+void FOC_ABZ_Init(int _PP, int _DIR);
 #endif
