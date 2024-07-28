@@ -68,10 +68,9 @@ You can use it as a sandbox to play with Writerside features, and remove it from
 
 4，此为变换后的波形对比图
 
-![image](clarke 变换生成的波形与原波形一致.png)
+![image](https://github.com/michaelchemic/STM32G4-DRV8301-FOC/blob/main/Readme/Writerside/images/clarke%20%E5%8F%98%E6%8D%A2%E7%94%9F%E6%88%90%E7%9A%84%E6%B3%A2%E5%BD%A2%E4%B8%8E%E5%8E%9F%E6%B3%A2%E5%BD%A2%E4%B8%80%E8%87%B4.png)
 
-参考资料：
-[](https://zhuanlan.zhihu.com/p/147659820)
+参考资料：(https://zhuanlan.zhihu.com/p/147659820)
 
 #### Park变换（将变量线性化）
 
@@ -79,7 +78,7 @@ You can use it as a sandbox to play with Writerside features, and remove it from
 
 ![image](https://github.com/michaelchemic/STM32G4-DRV8301-FOC/blob/main/Readme/Writerside/images/%E6%97%8B%E8%BD%AC%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB.png)
 
-![image](旋转的坐标系映射.png)
+![image](https://github.com/michaelchemic/STM32G4-DRV8301-FOC/blob/main/Readme/Writerside/images/%E6%97%8B%E8%BD%AC%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB%E6%98%A0%E5%B0%84.png)
 
 2，写成矩阵形式：
 
