@@ -231,11 +231,11 @@ int main(void)
 //    }
       
      // ABZ_Set_Angle(5); 
-       ABZ_Set_Speed(100);// 速度闭环。
+      ABZ_Set_Speed(10);// 速度闭环。
 
     // openloop debug
     // Current_Speed(2.0f, 0.1f);
-    // Open_Loop_Control(0.2f, -0.1f); // 开环控制顺时针，设置电压和速度。
+     //Open_Loop_Control(0.2f, -0.1f); // 开环控制顺时针，设置电压和速度。
     // Open_Loop_Control(1.0f, -0.01f); // 开环控制逆时针，设置电压和速度。
 
     // ABZ编码器debug

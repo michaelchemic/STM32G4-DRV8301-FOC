@@ -44,15 +44,17 @@ void PID_init() // 初始化pid变量
 //    pid_speed.Kd = 0.00001f;   // 速度环微分系数初始化为0.0008
 //    
         // 速度环pid，ABZ编码器
-    pid_speed.Set = 0.0f;      // 设置目标值初始化为0
-    pid_speed.Actual = 0.0f;   // 实际值初始化为0
-    pid_speed.err = 0.0f;      // 当前误差初始化为0
-    pid_speed.err_last = 0.0f; // 上次误差初始化为0
-    pid_speed.voltage = 0.0f;  // 输出电压初始化为0
-    pid_speed.integral = 0.0f; // 积分项初始化为0
-    pid_speed.Kp = 0.002f;     // 速度环比例系数初始化为0.11
-    pid_speed.Ki = 0.0005f;    // 速度环积分系数初始化为0.005
-    pid_speed.Kd = 0.00001f;   // 速度环微分系数初始化为0.0008
+     pid_speed.Set = 0.0f;      // 设置目标值初始化为0
+     pid_speed.Actual = 0.0f;   // 实际值初始化为0
+     pid_speed.err = 0.0f;      // 当前误差初始化为0
+     pid_speed.err_last = 0.0f; // 上次误差初始化为0
+     pid_speed.voltage = 0.0f;  // 输出电压初始化为0
+     pid_speed.integral = 0.0f; // 积分项初始化为0
+     pid_speed.Kp = 0.002f;     // 速度环比例系数初始化为0.11
+     pid_speed.Ki = 0.0005f;    // 速度环积分系数初始化为0.005
+     pid_speed.Kd = 0.00001f;   // 速度环微分系数初始化为0.0008
+
+
 
     // 电流环pid
     pid_current.Set = 0.0f;      // 设置目标值初始化为0

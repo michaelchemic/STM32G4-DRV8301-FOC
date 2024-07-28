@@ -173,8 +173,8 @@ void FOC_ABZ_Init(int _PP, int _DIR)
     // 值传递。
     PP = _PP;
     DIR = _DIR;
-    
-    setTorque(2, _2PI);
+
+    setTorque(3, _2PI);
     HAL_Delay(3000);
    
     setTorque(0, _2PI);
@@ -262,8 +262,8 @@ void Open_Loop_Control(float Uq, float speed)
     // char buffer[50]; // 用于存储转换后的字符串
     // int length = 0;
     float angle_el; // 初始化电角度
-
-    while (1)
+    float circulation;
+    for (circulation=0;circulation<1000;circulation++)
     {
 
         // Read_ADC1_Values();
@@ -282,8 +282,10 @@ void Open_Loop_Control(float Uq, float speed)
         // HAL_UART_Transmit(&huart1, (uint8_t *)buffer, length, HAL_MAX_DELAY);
         // 延时，确保控制频率
 
-        HAL_Delay(1); // 根据实际情况调整延时
+         HAL_Delay(1);//等待到达目标机械角度 
     }
+    
+    HAL_Delay(2000); // 根据实际情况调整延时
 }
 
 /***********************************************

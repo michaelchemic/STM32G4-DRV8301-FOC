@@ -168,28 +168,8 @@ Section Cross References
     foc.o(.text.Set_Speed) refers to d2f.o(.text) for __aeabi_d2f
     foc.o(.text.Set_Speed) refers to foc.o(.text.setTorque) for setTorque
     foc.o(.ARM.exidx.text.Set_Speed) refers to foc.o(.text.Set_Speed) for [Anonymous Symbol]
-    foc.o(.text.Open_Loop_Control) refers to foc.o(.bss..L_MergedGlobals) for .L_MergedGlobals
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.gain_c) for gain_c
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.current1_C) for current1_C
-    foc.o(.text.Open_Loop_Control) refers to foc.o(.rodata.str1.1) for .L.str
     foc.o(.text.Open_Loop_Control) refers to usart.o(.bss.huart1) for huart1
-    foc.o(.text.Open_Loop_Control) refers to adc.o(.text.Read_ADC1_Values) for Read_ADC1_Values
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.adc1_Ia) for adc1_Ia
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.adc1_Ib) for adc1_Ib
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.adc1_Ic) for adc1_Ic
-    foc.o(.text.Open_Loop_Control) refers to lowpass_filter.o(.bss.adc1_filter_Ia) for adc1_filter_Ia
-    foc.o(.text.Open_Loop_Control) refers to lowpass_filter.o(.text.ADC_Filter_Update) for ADC_Filter_Update
-    foc.o(.text.Open_Loop_Control) refers to lowpass_filter.o(.bss.adc1_filter_Ib) for adc1_filter_Ib
-    foc.o(.text.Open_Loop_Control) refers to lowpass_filter.o(.bss.adc1_filter_Ic) for adc1_filter_Ic
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.offset_ia) for offset_ia
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.gain_a) for gain_a
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.current1_A) for current1_A
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.offset_ib) for offset_ib
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.gain_b) for gain_b
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.current1_B) for current1_B
-    foc.o(.text.Open_Loop_Control) refers to main.o(.bss.offset_ic) for offset_ic
-    foc.o(.text.Open_Loop_Control) refers to printf6.o(i.__0snprintf$6) for __2snprintf
-    foc.o(.text.Open_Loop_Control) refers to stm32g4xx_hal_uart.o(.text.HAL_UART_Transmit) for HAL_UART_Transmit
+    foc.o(.text.Open_Loop_Control) refers to foc.o(.text.Send_ADC1_Values) for Send_ADC1_Values
     foc.o(.text.Open_Loop_Control) refers to f2d.o(.text) for __aeabi_f2d
     foc.o(.text.Open_Loop_Control) refers to fmod.o(i.__hardfp_fmod) for __hardfp_fmod
     foc.o(.text.Open_Loop_Control) refers to d2f.o(.text) for __aeabi_d2f
@@ -2245,7 +2225,7 @@ Removing Unused input sections from the image.
     Removing foc.o(.ARM.exidx.text.ABZ_Set_Speed), (8 bytes).
     Removing foc.o(.text.Set_Speed), (196 bytes).
     Removing foc.o(.ARM.exidx.text.Set_Speed), (8 bytes).
-    Removing foc.o(.text.Open_Loop_Control), (432 bytes).
+    Removing foc.o(.text.Open_Loop_Control), (156 bytes).
     Removing foc.o(.ARM.exidx.text.Open_Loop_Control), (8 bytes).
     Removing foc.o(.text.Send_ADC1_Values), (316 bytes).
     Removing foc.o(.ARM.exidx.text.Send_ADC1_Values), (8 bytes).
@@ -3687,7 +3667,7 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-1490 unused section(s) (total 97550 bytes) removed from the image.
+1490 unused section(s) (total 97274 bytes) removed from the image.
 
 ==============================================================================
 
@@ -4286,7 +4266,7 @@ Image Symbol Table
     UART_SetConfig                           0x0800519d   Thumb Code   688  stm32g4xx_hal_uart.o(.text.UART_SetConfig)
     UART_WaitOnFlagUntilTimeout              0x0800545d   Thumb Code   840  stm32g4xx_hal_uart.o(.text.UART_WaitOnFlagUntilTimeout)
     UsageFault_Handler                       0x080057a5   Thumb Code     2  stm32g4xx_it.o(.text.UsageFault_Handler)
-    main                                     0x080057a9   Thumb Code   296  main.o(.text.main)
+    main                                     0x080057a9   Thumb Code   290  main.o(.text.main)
     setTorque                                0x080058d1   Thumb Code   812  foc.o(.text.setTorque)
     __ARM_fpclassify                         0x08005bfd   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
     __hardfp_cos                             0x08005c31   Thumb Code   180  cos.o(i.__hardfp_cos)
@@ -4576,7 +4556,8 @@ Memory Map of the image
     0x0800545c   0x0800545c   0x00000348   Code   RO         1364    .text.UART_WaitOnFlagUntilTimeout  stm32g4xx_hal_uart.o
     0x080057a4   0x080057a4   0x00000002   Code   RO          362    .text.UsageFault_Handler  stm32g4xx_it.o
     0x080057a6   0x080057a6   0x00000002   PAD
-    0x080057a8   0x080057a8   0x00000128   Code   RO          160    .text.main          main.o
+    0x080057a8   0x080057a8   0x00000122   Code   RO          160    .text.main          main.o
+    0x080058ca   0x080058ca   0x00000006   PAD
     0x080058d0   0x080058d0   0x0000032c   Code   RO           63    .text.setTorque     foc.o
     0x08005bfc   0x08005bfc   0x00000030   Code   RO         2298    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
     0x08005c2c   0x08005c2c   0x00000004   PAD
@@ -4673,12 +4654,12 @@ Image component sizes
        268          8          0          0         12       1372   control.o
        118          0          0          0          0       4118   dma.o
        436          0          0          0        204       6138   fdcan.o
-      1216         72          0          0          0      14943   foc.o
+      1216         72          0          0          0      14825   foc.o
        234          0          0          0          0       4745   gpio.o
        484          0          0          0        168       7122   i2c.o
         66          8          0          0         88       1562   lowpass_filter.o
-       306          4          0         16         40       3645   main.o
-       122          0          0          0        108        778   pid.o
+       300          0          0         16         40       3640   main.o
+       122          0          0          0        108        780   pid.o
         36          8        472          0       1024        844   startup_stm32g474xx.o
        184          0          0          8          4       9540   stm32g4xx_hal.o
       1636          0          0          0          0      28766   stm32g4xx_hal_adc.o
@@ -4703,9 +4684,9 @@ Image component sizes
        810          0          0          0        540       7696   usart.o
 
     ----------------------------------------------------------------------
-     21356        198        584         28       3192     436851   Object Totals
+     21356        194        584         28       3192     436730   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       110          0          0          0          0          0   (incl. Padding)
+       116          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -4772,9 +4753,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     25952        498        880         32       3192     438107   Grand Totals
-     25952        498        880         32       3192     438107   ELF Image Totals
-     25952        498        880         32          0          0   ROM Totals
+     25952        494        880         32       3192     437986   Grand Totals
+     25952        494        880         32       3192     437986   ELF Image Totals
+     25952        494        880         32          0          0   ROM Totals
 
 ==============================================================================
 
