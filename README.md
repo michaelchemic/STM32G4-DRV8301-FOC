@@ -10,7 +10,7 @@ You can use it as a sandbox to play with Writerside features, and remove it from
 ### 使用的硬件设备
 该项目使用 ST公司生产的 STM32G474RE-Nucleo-64 评估板，TI 生产的 BOOSTXL-DRV8301 电机驱动板为主要开发套件。
 
-![](STM32G474-Nucleo.png)
+![image](https://github.com/michaelchemic/STM32G4-DRV8301-FOC/blob/main/Readme/Writerside/images/STM32G474-Nucleo.png)
 
 相关资料请访问：
 [](https://www.st.com/en/evaluation-tools/nucleo-g474re.html)
