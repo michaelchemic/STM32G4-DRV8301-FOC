@@ -21,7 +21,8 @@
             "control.h": "c",
             "pid.h": "c",
             "string.h": "c",
-            "foc.h": "c"
+            "foc.h": "c",
+            "usb.h": "c"
         },
         "cmsis-csolution.actions": [
             {

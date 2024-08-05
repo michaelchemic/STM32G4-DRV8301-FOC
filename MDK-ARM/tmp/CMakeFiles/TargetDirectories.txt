@@ -1,6 +1,0 @@
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink.dir
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-build.dir
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-configure.dir
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/STM32G474RETx_Demo_Blink+STM32G474RETxDemoBlink-database.dir
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/edit_cache.dir
-C:/Users/Michael_Chemic/Desktop/STM32G4-DRV8301-FOC/MDK-ARM/tmp/CMakeFiles/rebuild_cache.dir
